@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import os
 
 token = 'NzkxNTM5MTY3OTk3MzI5NDE4.X-QoSw.SSO22ilbCkLczalIenWfdBSMOmg'
 
@@ -52,6 +53,6 @@ async def on_message(message):
             await message.channel.send(f"관리 권한 필요한데")
     if message.content == ("!초대"):
         await message.channel.send ("https://discord.com/api/oauth2/authorize?client_id=791539167997329418&permissions=8&scope=bot")
-
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
